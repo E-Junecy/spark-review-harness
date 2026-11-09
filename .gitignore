@@ -1,0 +1,45 @@
+# 凭据：只在本机读，绝不进版本库
+.env
+.env.local
+*.key
+# 模板文件要能提交，所以给个例外
+!.env.example
+
+# 开发期确定架构用的草稿（内容来自那节视频），框架搭好后只是本机留档，不进版本库
+summary.md
+
+# 运行产物（都可删，重跑会自动重建；各目录是什么见 README「文件设计分布」）
+sessions/
+runs/
+quests/
+_tmp/
+
+# 与本项目无依赖关系的本机目录，不在重构范围内（README 里写明了），只留在本机
+skill/
+
+# Python 缓存 / 虚拟环境 / 覆盖率
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+*.egg-info/
+
+# 编辑器与系统在文件夹里顺手留下的东西
+.vscode/
+.idea/
+*.swp
+*~
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.DS_Store
+$RECYCLE.BIN/
+# Office / WPS 打开文档时落在同目录的锁文件与备份
+~$*
+*.bak
+*.tmp

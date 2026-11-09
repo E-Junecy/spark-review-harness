@@ -1,0 +1,10 @@
+# 运行环境：conda llm_learn（Python 3.11）。安装：
+#   conda run --no-capture-output -n llm_learn python -m pip install -r requirements.txt
+openai>=2.0          # adapters/models/openai_client.py：DashScope 兼容模式与 Ollama /v1 都用它
+typer>=0.20          # adapters/cli.py 的命令行前端
+rich>=15             # CLI 着色（动态内容一律走 Text，不解析 markup）
+textual>=8.2         # adapters/tui.py 的终端界面（一键入口：harness.bat）
+python-dotenv>=1.0   # main.py 读 .env 里的 DASHSCOPE_API_KEY
+pytest>=8            # 只有 tests/ 需要
+ruff>=0.15           # 可选：代码规范（配置见 ruff.toml）
+# 模板不用 jinja2：prompts.py 用标准库 string.Template（$workspace），少一个依赖

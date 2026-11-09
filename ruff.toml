@@ -1,0 +1,9 @@
+# 代码规范：跑法 conda run --no-capture-output -n llm_learn python -m ruff check .
+# 只挑真正会咬人的规则：F 未定义/未使用、E/W 风格与行长、I import 顺序、UP py3.10+ 写法。
+line-length = 120
+target-version = "py310"
+# runs / sessions / quests 是运行产物（quests 里的 .py 是模型写的临时脚本），不参与本项目的规范检查
+exclude = ["_tmp", "runs", "sessions", "quests", "skill"]
+
+[lint]
+select = ["F", "E", "W", "I", "UP"]
